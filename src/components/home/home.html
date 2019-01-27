@@ -1,0 +1,11 @@
+<div>
+  <div class="center-wrapper">
+    <div class="enter-block">
+      <p>You are logged in as {{ authUser.email }} </p>
+      <p>Hi, {{ authUser.displayName || 'friend' }}</p>
+      <button @click="logout">Logout</button>
+    </div>
+
+  </div>
+
+</div>

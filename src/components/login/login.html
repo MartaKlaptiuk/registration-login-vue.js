@@ -1,0 +1,53 @@
+<div>
+  <div class="center-wrapper">
+    <div class="enter-block">
+      <div class="register-form" v-if="show">
+
+        <div class="header-form">
+          <div class="option flex" :class="isActive ? 'active-reg' : ''">
+            <p class="option-text">Register</p>
+          </div>
+          <div class="option flex">
+            <p class="option-text" @click="show = !show">Log In</p>
+          </div>
+        </div>
+
+        <div class="form-wrapper">
+          <input type="text" id="username" placeholder="Username" v-model="user.displayName">
+
+          <input type="email" id="email" placeholder="Email" required v-model="user.email">
+
+          <input type="password" id="password" placeholder="Password (minimum 6 characters)" required v-model="user.password">
+
+          <input type="password" id="confirmPassword" placeholder="Repeat your password" required v-model="user.confirmPassword">
+
+          <button @click="registerUser" class="login-btn">Register</button>
+
+          <p class="use-google">Or Sign in with Google account</p>
+          <button class="google-btn" @click="signInWithGoogle">Sign in</button>
+        </div>
+
+      </div>
+
+
+      <div class="login-form" v-else>
+
+        <div class="header-form">
+          <div class="option flex">
+            <p class="option-text" @click="show = !show">Register</p>
+          </div>
+          <div class="option flex" :class="isActive ? 'active-reg' : ''">
+            <p class="option-text">Log In</p>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <input type="email" id="email" placeholder="Enter your email" required v-model="user.emailLogin">
+
+          <input type="password" id="password" placeholder="Password" required v-model="user.passwordLogin">
+
+          <button @click="loginUser" class="login-btn">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
